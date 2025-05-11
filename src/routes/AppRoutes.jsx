@@ -19,7 +19,7 @@ const AppRoutes = () => {
             {/* pages routes  */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/properties" element={<Properties />} />
+            <Route path="/properties/:type" element={<Properties />} />
             <Route path="/properties/:id" element={<PropertyDetails />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
