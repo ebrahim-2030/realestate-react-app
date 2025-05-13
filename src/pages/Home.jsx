@@ -3,7 +3,9 @@ import hero from "../assets/images/hero.jpg";
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
+
+      {/* header section  */}
       <section
         style={{ backgroundImage: `url(${hero})`}}
         className="h-[100vh] pt-[8vh] lg:pt-[9.5vh] bg-cover bg-center bg-brand-primary/90 bg-blend-overlay "

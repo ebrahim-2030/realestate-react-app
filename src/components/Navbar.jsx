@@ -50,7 +50,7 @@ const Navbar = () => {
   // set scrolled state based on window scroll position
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -68,14 +68,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`h-[8vh] lg:h-[9.5vh] max-w-screen-2xl px-4 fixed top-0 left-0 w-full bg-transparent ${
-        scrolled && "bg-brand-primary "
+      className={`h-[8vh] lg:h-[9.5vh] max-w-screen-2xl px-4 fixed top-0 left-0 w-full  ${
+        scrolled ? "bg-brand-primary " : "bg-transparent"
       } text-white shadow lg:shadow-none  shadow-black/20 z-50 transition-all duration-300`}
     >
       <div className="h-full flex items-center justify-between ">
         {/* logo */}
         <Link to="/">
-          <img src={logo} className="h-10 md:h-14" alt="" />
+          <img src={logo} className="h-10 md:h-12" alt="" />
         </Link>
         {/* desktop nav links */}
         <ul className="hidden lg:flex items-center gap-10 capitalize relative">
@@ -132,7 +132,7 @@ const Navbar = () => {
                           </span>
                         </div>
 
-                        <span className="text-xs font-medium opacity-90">
+                        <span className="text-xs font-medium opacity-60">
                           {item.desc}
                         </span>
                       </NavLink>
