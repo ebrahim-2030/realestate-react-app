@@ -16,7 +16,7 @@ const AppRoutes = () => {
         {/* navbar */}
         <Navbar />
         <main>
-            {/* pages routes  */}
+          {/* pages routes  */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/properties/:type" element={<Properties />} />

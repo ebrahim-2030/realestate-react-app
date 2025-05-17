@@ -111,7 +111,7 @@ const properties = [
     discount: {
       isDiscounted: true,
       discountedPrice: 617500,
-      discountPercentage: 5,
+      discountPercentage: 10,
       validUntil: "2025-07-10",
     },
     listingType: "For Sale",
@@ -120,7 +120,7 @@ const properties = [
     location: "New York, 45 Broadway",
     features: {
       bedrooms: 2,
-      bathrooms: 2,
+      bathrooms: 3,
       areaSqFt: 1800,
       yearBuilt: 2018,
       furnishing: "Fully Furnished",
@@ -169,7 +169,7 @@ const properties = [
     discount: {
       isDiscounted: true,
       discountedPrice: 256500,
-      discountPercentage: 10,
+      discountPercentage: 5,
       validUntil: "2025-06-25",
     },
     listingType: "For Sale",
@@ -177,7 +177,7 @@ const properties = [
     status: "Available",
     location: "New York, 90 Prince St",
     features: {
-      bedrooms: 0,
+      bedrooms: 2,
       bathrooms: 1,
       areaSqFt: 600,
       yearBuilt: 2015,
