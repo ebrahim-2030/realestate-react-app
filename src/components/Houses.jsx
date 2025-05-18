@@ -2,6 +2,7 @@ import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { useProperties } from "../contexts/PropertiesContext";
 import Property from "./Property";
+import { BiArrowToRight } from "react-icons/bi";
 
 const Houses = () => {
   const navigate = useNavigate();

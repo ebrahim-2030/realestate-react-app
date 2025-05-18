@@ -3,6 +3,7 @@ import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { useProperties } from "../contexts/PropertiesContext";
 import Property from "./Property";
+import { BiArrowToRight } from "react-icons/bi";
 
 const Apartments = () => {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ const Apartments = () => {
           onClick={() => navigate("/properties/apartment")}
           className=" mt-6 p-2  font-bold border-2  border-brand-primary/70 text-brand-primary/80 text-xs flex items-center"
         >
-          View More <BiArrowToRight className="ml-1 text-lg " />
+          View More <BiArrowToRight className="ml-1 text-lg" />
         </button>
       </div>
     </div>
