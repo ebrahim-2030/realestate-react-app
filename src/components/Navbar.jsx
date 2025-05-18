@@ -78,7 +78,7 @@ const Navbar = () => {
           <img src={logo} className="h-10 md:h-12" alt="" />
         </Link>
         {/* desktop nav links */}
-        <ul className="hidden lg:flex items-center gap-10 capitalize relative">
+        <ul className="hidden flex-1 lg:flex items-center justify-center lg:ml-20 gap-10 capitalize relative">
           {navlinks.map((link) => (
             <li
               key={link.path}

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Property = ({ property }) => {
   return (
     <Link to={`/properties/${property.id}`}>
-      <div className="group max-w-[320px] mx-auto relative border border-custom_black/10 p-4">
+      <div className="group max-w-[350px] mx-auto relative border border-custom_black/10 p-4">
         <div className="overflow-hidden">
           <img src={property.images[0]} className="h-52 w-full group-hover:scale-110 transition-all duration-200" alt="" />
           {property.discount.isDiscounted && (
@@ -15,7 +15,7 @@ const Property = ({ property }) => {
           )}
         </div>
         <div className="pt-4">
-          <h3 className="text-xl font-bold text-brand-primary/80">
+          <h3 className="text-xl font-bold text-brand-primary/80 truncate">
             {property.title}
           </h3>
           <p className="my-2 text-sm text-custom_black/80">
