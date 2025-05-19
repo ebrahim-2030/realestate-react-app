@@ -53,7 +53,7 @@ const whyChooseUs = [
 
 const WhyChooseUs = () => {
   return (
-    <div className="max-w-screen-xl mx-auto text-white py-10 sm:py-16">
+    <div className="max-w-screen-xl mx-auto text-white py-12 sm:py-16">
       {/* title and description */}
       <div className=" flex flex-col items-start opacity-90">
         <h2 className="text-2xl md:text-4xl font-bold sm:font-semibold">

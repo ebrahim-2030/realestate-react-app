@@ -26,6 +26,7 @@ import {
 import { ImQuotesLeft } from "react-icons/im";
 import { RiStarSFill } from "react-icons/ri";
 import { TiStarFullOutline } from "react-icons/ti";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const testimonials = [
   {
@@ -72,41 +73,41 @@ const Testimonials = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   return (
-    <div className=" relative max-w-screen-lg  mx-auto ">
+    <div className=" relative max-w-screen-lg  mx-auto">
       <div className="w-full flex flex-col sm:flex-row sm:justify-between gap-6 ">
         {/* title and description */}
         <div className="flex-1">
-          <h3 className="text-3xl sm:text-4xl">
+          <h3 className="text-3xl lg:text-4xl">
             Here From Our{" "}
             <span className="block font-bold text-teal-700 mt-1 sm:mt-2">
               Happy Homeowners.
             </span>
           </h3>
-          <p className="mt-2 md:mt-4 text-custom_black/80 text-sm font-medium w-96">
+          <p className="mt-2 sm:mt-6 text-custom_black/80 text-sm font-medium max-w-96">
             Real people, real experiences. Discover how our platform has helped
             buyers and sellers achieve their property goals
           </p>
         </div>
         {/* testimonials slider */}
-        <div className="sm:w-[400px]">
+        <div className="max-w-[350px]">
           {/* navigation buttons */}
-          <div className="absolute -bottom-2 sm:bottom-4 md:bottom-0 lg:-bottom-4  right-0 sm:left-0 z-10">
+          <div className="text-xl  absolute -bottom-2 sm:bottom-4 md:bottom-0 lg:-bottom-0  right-0 sm:left-0 z-10 flex items-center gap-4">
             {/* custom Prev Button */}
             <button
+              className="p-2 bg-teal-700 text-white rounded-full hover:scale-105 transition-all duration-100"
               ref={prevRef}
-              className=" text-4xl text-teal-700"
               aria-label="Previous Slide"
             >
-              <IoIosArrowDropleftCircle />
+              <MdKeyboardArrowLeft />
             </button>
 
             {/* custom Next Button */}
             <button
+              className="p-2 bg-teal-700 text-white rounded-full hover:scale-105 transition-all duration-100"
               ref={nextRef}
-              className=" text-4xl text-teal-700"
               aria-label="Next Slide"
             >
-              <IoIosArrowDroprightCircle />
+              <MdKeyboardArrowRight />
             </button>
           </div>
 

@@ -9,6 +9,8 @@ import Apartments from "../components/Apartments";
 import Houses from "../components/Houses";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Testimonials from "../components/Testimonials";
+import FAQ from "../components/FAQ";
+import GetStarted from "../components/GetStarted";
 
 const Home = () => {
   return (
@@ -68,12 +70,19 @@ const Home = () => {
       </section>
 
       {/* testimonials section */}
-      <section className="px-4 xl:px-0 mt-12 md:mt-20 lg:mt-24 border-b-4 pb-12 md:pb-20 border-teal-600">
+      <section className="px-4 xl:px-0 mt-12 md:mt-20 lg:mt-24 ">
         <Testimonials />
       </section>
 
-      {/* rest */}
-      <section className="max-w-screen-xl mx-auto mt-44">Rest</section>
+      {/* faq section */}
+      <section className="px-4 xl:px-0 mt-12 md:mt-20 lg:mt-24 ">
+        <FAQ />
+      </section>
+
+      {/* getstarted section */}
+      <section className="px-4 xl:px-0 mt-20 md:mt-40 lg:mt-24">
+        <GetStarted />
+      </section>
     </div>
   );
 };

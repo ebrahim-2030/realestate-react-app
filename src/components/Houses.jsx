@@ -7,10 +7,10 @@ import { BiArrowToRight } from "react-icons/bi";
 const Houses = () => {
   const navigate = useNavigate();
 
-//   get all properties from context
+  //   get all properties from context
   const { allProperties } = useProperties();
 
-//   filter house-type properties
+  //   filter house-type properties
   const filteredProperties = allProperties.filter(
     (property) => property.propertyType === "House"
   );
@@ -21,7 +21,7 @@ const Houses = () => {
         {/* title and description */}
         <div className=" flex flex-col items-start">
           <h2 className="text-2xl md:text-4xl font-bold sm:font-semibold">
-            Nice Houses
+            Beautiful Houses
           </h2>
           <p className=" text-sm md:text-base mt-2 lg:mt-2  pb-3 text-custom_black/70 font-medium">
             Spacious and comfortable houses, ideal for families seeking a
