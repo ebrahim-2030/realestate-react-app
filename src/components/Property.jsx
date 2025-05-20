@@ -7,7 +7,11 @@ const Property = ({ property }) => {
     <Link to={`/properties/${property.id}`}>
       <div className="group max-w-[350px] mx-auto relative border border-custom_black/10 p-4">
         <div className="overflow-hidden">
-          <img src={property.images[0]} className="h-52 w-full group-hover:scale-110 transition-all duration-200" alt="" />
+          <img
+            src={property.images[0]}
+            className="h-52 w-full group-hover:scale-110 transition-all duration-500"
+            alt=""
+          />
           {property.discount.isDiscounted && (
             <span className="absolute top-0 left-0 rounded-br bg-red-500 italic text-white  border-r-1  text-lg p-1 font-bold w-14 text-center">
               %{property.discount.discountPercentage}

@@ -18,17 +18,17 @@ const navlinks = [
     submenu: [
       {
         label: "all",
-        path: "/properties/all",
+        path: "/search-result",
         desc: "Discover all properties available for rent or sale",
       },
       {
         label: "apartments",
-        path: "/properties/apartments",
+        path: "/search-result?propertyType=apartment",
         desc: "Explore a variety of apartments for rent or sale",
       },
       {
         label: "houses",
-        path: "/properties/houses",
+        path: "/search-result?propertyType=house",
         desc: "Find houses for rent or sale in different locations",
       },
     ],
@@ -110,7 +110,7 @@ const Navbar = () => {
 
               {/* dropdown menu */}
               {link.submenu && openDropdown && (
-                <ul className=" absolute  top-full left-1/2 -translate-x-1/2 bg-white text-custom_black shadow-md rounded-b-md z-40 w-[700px] px-4 py-6 grid grid-cols-3 gap-4 border-b-4 border-x-2 border-brand-secandary">
+                <ul className=" absolute  top-full left-1/2 -translate-x-1/2 bg-white text-custom_black shadow-md rounded z-40 w-[700px] px-4 py-6 grid grid-cols-3 gap-4 border-b-4  border-brand-secandary">
                   {link.submenu.map((item) => (
                     <li
                       key={item.path}

@@ -2,7 +2,7 @@
 const GetStarted = () => {
   return (
     <div className="max-w-screen-xl mx-auto  relative ">
-      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 w-full bg-brand-secandary rounded flex flex-col items-center py-12 md:flex-row md:justify-center md:gap-10 lg:gap-64 ">
+      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 w-full bg-brand-secandary rounded flex flex-col items-center py-10 md:flex-row md:justify-center md:gap-10 lg:gap-64 ">
         {/* title */}
         <div>
           <h2 className="text-2xl  font-medium text-center md:text-start text-brand-primary leading-10 lg:leading-[50px]  md:text-3xl lg:text-4xl ">

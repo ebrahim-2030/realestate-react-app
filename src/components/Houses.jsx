@@ -30,7 +30,7 @@ const Houses = () => {
         </div>
         {/* navigate to more properties */}
         <button
-          onClick={() => navigate("properties/house")}
+         onClick={() => navigate("/search-result?propertyType=house")}
           className="hidden mt-6 p-2 text-sm  font-bold text-brand-primary/80  sm:flex items-center"
         >
           View More <IoIosArrowDroprightCircle className="text-lg ml-1" />
@@ -47,7 +47,7 @@ const Houses = () => {
       {/* view more button for small screen */}
       <div className="flex sm:hidden justify-center">
         <button
-          onClick={() => navigate("/properties/house")}
+          onClick={() => navigate("/search-result?propertyType=house")}
           className=" mt-6 p-2  font-bold border-2  border-brand-primary/70 text-brand-primary/80 text-xs flex items-center"
         >
           View More <BiArrowToRight className="ml-1 text-lg " />

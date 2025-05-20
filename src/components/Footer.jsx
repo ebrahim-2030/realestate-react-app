@@ -13,7 +13,7 @@ const Footer = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className="px-4 max-w-screen-2xl mx-auto pt-52 bg-brand-primary text-white/95"
+      className="px-4 max-w-screen-2xl mx-auto pt-40 md:pt-48 bg-brand-primary text-white/95"
     >
       <div className="max-w-screen-xl mx-auto grid sm:grid-cols-3 lg:grid-cols-6 gap-y-20  ">
         {/* about & newsletter */}

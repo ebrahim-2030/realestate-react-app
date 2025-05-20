@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useProperties } from "../contexts/PropertiesContext";
 import Property from "./Property";
 import { BiArrowToRight } from "react-icons/bi";
@@ -31,7 +31,7 @@ const Apartments = () => {
         </div>
         {/* navigate to more properties */}
         <button
-          onClick={() => navigate("properties/apartment")}
+          onClick={() => navigate("/search-result?propertyType=apartment")}
           className="hidden mt-6 p-2 text-sm  font-bold text-brand-primary/80  sm:flex items-center"
         >
           View More <IoIosArrowDroprightCircle className="text-lg ml-1" />
@@ -48,7 +48,7 @@ const Apartments = () => {
       {/* view more button for small screen */}
       <div className="flex sm:hidden justify-center">
         <button
-          onClick={() => navigate("/properties/apartment")}
+          onClick={() => navigate("/search-result?propertyType=apartment")}
           className=" mt-6 p-2  font-bold border-2  border-brand-primary/70 text-brand-primary/80 text-xs flex items-center"
         >
           View More <BiArrowToRight className="ml-1 text-lg" />

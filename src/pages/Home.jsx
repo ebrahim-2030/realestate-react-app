@@ -17,8 +17,10 @@ const Home = () => {
     <div className="">
       {/* header section  */}
       <section
-        style={{ backgroundImage: `url(${hero})` }}
-        className="px-4 xl:px-0 h-[100vh] pt-[8vh] lg:pt-[9.5vh] bg-cover bg-center bg-brand-primary/90 bg-blend-overlay "
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(15,37,42, 1), rgba(15,37,42, 0.8)), url(${hero})`,
+        }}
+        className="px-4 xl:px-0 h-[100vh] pt-[8vh] lg:pt-[9.5vh] bg-cover bg-center  "
       >
         <Header />
       </section>
@@ -41,7 +43,7 @@ const Home = () => {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
-        className="px-4 xl:px-0 mt-12 md:mt-20 lg:mt-24 bg-black/60 bg-blend-overlay"
+        className="px-4 xl:px-0 mt-12 md:mt-20 lg:mt-24 text-white bg-black/60 bg-blend-overlay"
       >
         <Achivements />
       </section>
