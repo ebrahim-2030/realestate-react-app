@@ -8,6 +8,7 @@ import FAQ from "../components/FAQ";
 import Testimonials from "../components/Testimonials";
 import GetStarted from "../components/GetStarted";
 import OurStory from "./about-components/OurStory";
+import OurAgents from "../components/OurAgents";
 
 const About = () => {
   return (
@@ -20,7 +21,7 @@ const About = () => {
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
-        className="px-4 xl:px-0 h-[75vh] pt-[8vh] lg:pt-[9.5vh]"
+        className="px-4 xl:px-0 h-[80vh] pt-[8vh] lg:pt-[9.5vh]"
       >
         <AboutHeader />
       </section>
@@ -38,10 +39,15 @@ const About = () => {
       </section>
 
       {/* about section */}
-      <section className="  px-4 xl:px-0 mt-12 md:mt-20 lg:mt-12 ">
+      <section className="  px-4 xl:px-0 mt-12 md:mt-20 lg:mt-24 ">
         <div>
           <AboutSection />
         </div>
+      </section>
+
+      {/* our agents */}
+      <section className="px-4 xl:px-0 mt-12 md:mt-20 lg:mt-24">
+        <OurAgents />
       </section>
 
       {/* testimonials section */}
@@ -63,7 +69,7 @@ const About = () => {
       </section>
 
       {/* faq section */}
-      <section className="px-4 xl:px-0  mt-8">
+      <section className="px-4 xl:px-0 ">
         <FAQ />
       </section>
 

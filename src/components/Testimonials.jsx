@@ -91,7 +91,7 @@ const Testimonials = () => {
         {/* testimonials slider */}
         <div className="max-w-[350px]">
           {/* navigation buttons */}
-          <div className="text-xl  absolute -bottom-2 sm:bottom-4 md:bottom-0 lg:-bottom-0  right-0 sm:left-0 z-10 flex items-center gap-4">
+          <div className="text-xl  absolute -bottom-2 sm:-bottom-12 md:-bottom-2   right-0 sm:left-0 z-10 flex items-center gap-4">
             {/* custom Prev Button */}
             <button
               className="p-2 bg-teal-700 text-white rounded-full hover:scale-105 transition-all duration-100"
@@ -151,6 +151,7 @@ const Testimonials = () => {
                         {stars.map((star) => {
                           return (
                             <TiStarFullOutline
+                              key={star}
                               className={`text-base  ${
                                 star <= item.rating
                                   ? "text-teal-700"

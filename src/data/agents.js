@@ -78,7 +78,7 @@ const agents = [
     name: "Amanda Lee",
     email: "amanda.lee@luxeliving.com",
     phone: "+1 555-890-1234",
-    agency: "Luxe Living International",
+    agency: "LIV International",
     profileImage: agent_8,
     bio: "Celebrity realtor with discreet high-net-worth client services.",
   },

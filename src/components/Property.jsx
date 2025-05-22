@@ -9,7 +9,7 @@ const Property = ({ property }) => {
       to={`/property-details/${property.id}`}
       onClick={() => window.scrollTo(0, 0)}
     >
-      <div className="group max-w-[350px] mx-auto relative border border-custom_black/10 p-4">
+      <div className="group max-w-[330px] mx-auto relative border border-custom_black/10 p-4">
         <div className="overflow-hidden">
           <img
             src={property.images[0]}

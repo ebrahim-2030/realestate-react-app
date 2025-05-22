@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Property from "../../components/Property";
-import { Link } from "react-scroll";
+import { Element, Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 // Component to display a list of properties with pagination
 const PropertiesList = ({ properties }) => {
@@ -24,13 +25,28 @@ const PropertiesList = ({ properties }) => {
     setCurrentPage(page);
   };
 
-  return (
-    <div className="flex-1">
-      {/* Scroll target for react-scroll */}
-      <div id="property-list"></div>
+  const navigate = useNavigate();
+  // navigate to agents page
+  const handleNavigate = () => {
+    navigate("/agents");
+    window.scrollTo(0, 0);
+  };
 
-      <h2 className="text-2xl font-bold mb-4">Search Results</h2>
-      {properties.length === 0 && <p>No properties found.</p>}
+  return (
+    <div className="flex-1 ">
+      <Element name="property-list" className="text-2xl font-bold mb-4">
+        Search Results
+      </Element>
+      {properties.length === 0 && (
+        <p>
+          {" "}
+          No properties found. Talk to one of our {" "}
+          <p onClick={handleNavigate} className="underline cursor-pointer">
+            agents
+          </p>{" "}
+          .
+        </p>
+      )}
 
       {/* Properties grid */}
       <div className="mt-6 grid gap-4 sm:grid-cols-2 md:gap-10 lg:gap-4 xl:grid-cols-3">
@@ -45,7 +61,7 @@ const PropertiesList = ({ properties }) => {
           {/* Prev Button */}
           <Link
             to="property-list"
-            offset={70}
+            offset={-80}
             onClick={() => currentPage > 1 && goToPage(currentPage - 1)}
             className={`px-4 py-2 rounded ${
               currentPage === 1
@@ -61,7 +77,7 @@ const PropertiesList = ({ properties }) => {
             <Link
               key={num}
               to="property-list"
-              offset={70}
+              offset={-80}
               onClick={() => goToPage(num)}
               className={`px-3 py-1 rounded cursor-pointer ${
                 currentPage === num
@@ -76,7 +92,7 @@ const PropertiesList = ({ properties }) => {
           {/* Next Button */}
           <Link
             to="property-list"
-            offset={70}
+            offset={-80}
             onClick={() =>
               currentPage < totalPages && goToPage(currentPage + 1)
             }

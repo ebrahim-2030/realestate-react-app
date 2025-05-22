@@ -5,8 +5,8 @@ const SearchResultHeader = () => {
         {/* title */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-10">
           Browse Properties Near You
-          <span className="text-brand-secandary  mt-2 sm:mt-3 lg:block ">
-             Find Your Home
+          <span className="text-brand-secandary  mt-2 sm:mt-3 block ">
+            Find Your Home
           </span>
         </h2>
         {/* description */}

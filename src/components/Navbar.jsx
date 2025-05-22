@@ -50,7 +50,7 @@ const Navbar = () => {
   // set scrolled state based on window scroll position
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 1);
     };
 
     window.addEventListener("scroll", handleScroll);

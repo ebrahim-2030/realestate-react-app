@@ -25,7 +25,7 @@ const FAQ = () => {
     setOpenedId(openedId === id ? null : id);
   };
   return (
-    <div className="max-w-screen-lg mx-auto py-20  bg-gradient-to-b from-emerald-50/50 to-transparent ">
+    <div className="max-w-screen-xl mx-auto py-20  bg-gradient-to-b from-emerald-50/50 to-transparent ">
       <div className="max-w-screen-md mx-auto flex flex-col items-center px-4 sm:px-8">
         {/* image and heading */}
         <div className="w-full flex flex-col sm:flex-row items-center sm:justify-between gap-8">
@@ -64,6 +64,7 @@ const FAQ = () => {
         <ul className="mt-4 sm:mt-8 w-full ">
           {filteredItems.map((item, index) => (
             <li
+              key={item.id}
               className={`${
                 index < filteredItems.length - 1
                   ? "border-b border-custom_black/15"
@@ -74,7 +75,7 @@ const FAQ = () => {
                 onClick={() => handleToggle(item.id)}
                 className="outline-none w-full cursor-pointer flex items-end  justify-between py-4  text-left "
               >
-                <h3 className="text-sm font-semibold md:text-lg">
+                <h3 className="text-sm font-semibold md:text-[17px]">
                   {item.title}
                 </h3>
                 <MdOutlineKeyboardArrowDown
@@ -93,7 +94,7 @@ const FAQ = () => {
                 }}
                 className="overflow-hidden transition-all duration-500"
               >
-                <p className="pb-4 text-xs font-medium leading-5 text-custom_black/70">
+                <p className="pb-4 text-xs md:text-sm font-medium leading-5 text-custom_black/70">
                   {item.content}
                 </p>
               </div>

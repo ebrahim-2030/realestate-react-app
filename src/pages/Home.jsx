@@ -12,6 +12,7 @@ import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
 import GetStarted from "../components/GetStarted";
 import { Element } from "react-scroll";
+import OurAgents from "../components/OurAgents";
 
 const Home = () => {
   return (
@@ -28,7 +29,7 @@ const Home = () => {
 
       {/* about section */}
       <section className=" px-4 xl:px-0 mt-12 md:mt-20 lg:mt-24 bg-white">
-        <Element name="about" >
+        <Element name="about">
           <AboutSection />
         </Element>
       </section>
@@ -59,6 +60,11 @@ const Home = () => {
       {/* apartments section */}
       <section className="px-4 xl:px-0 mt-12 md:mt-20 lg:mt-24">
         <Apartments />
+      </section>
+
+      {/* our agents */}
+      <section className="px-4 xl:px-0 mt-12 md:mt-20 lg:mt-24">
+        <OurAgents />
       </section>
 
       {/* WhyChooseUs section */}

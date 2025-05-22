@@ -12,7 +12,7 @@ const OurStory = () => {
             The Journey That Turns <br className="hidden lg:block" /> Dreams
             Into a Home
           </h2>
-          <div className=" mt-3 text-justify flex flex-col gap-4 text-custom_black/70 font-medium">
+          <div className=" mt-3 text-sm md:text-base leading-6 md:text-justify flex flex-col gap-4 text-custom_black/70 font-medium">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
               nulla cum tempore adipisci aliquid magni quibusdam fugit quisquam
@@ -33,7 +33,7 @@ const OurStory = () => {
 
         {/* images */}
         <div className="h-96 md:h-[430px] lg:h-[470px] md:w-96 lg:w-1/2  p-1 relative ">
-          <div className="bg-brand-primary absolute top-8 right-8 lg:right-0 shadow-2xl border  max-w-96   ">
+          <div className="bg-brand-primary absolute top-8 right-8 lg:top-12 lg:right-0 shadow-2xl border  max-w-96   ">
             <img
               src={story1}
               className="w-full

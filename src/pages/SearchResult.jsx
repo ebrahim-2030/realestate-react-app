@@ -10,7 +10,7 @@ import SearchSidebar from "./search-result-components/SearchSidebar";
 import { useLocation, useNavigate } from "react-router-dom";
 import GetStarted from "../components/GetStarted";
 
-import { Link, Element, } from "react-scroll";
+import { Link, Element } from "react-scroll";
 
 const SearchResult = () => {
   // get all properties from context
@@ -94,9 +94,7 @@ const SearchResult = () => {
       // match location
       if (
         filters.location !== "all" &&
-        !property.location
-          .toLowerCase()
-          .includes(filters.location)
+        !property.location.toLowerCase().includes(filters.location)
       ) {
         return false;
       }
@@ -153,7 +151,7 @@ const SearchResult = () => {
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
-        className="px-4 xl:px-0 h-[75vh] pt-[8vh] lg:pt-[9.5vh]"
+        className="px-4 xl:px-0 h-[80vh] pt-[8vh] lg:pt-[9.5vh]"
       >
         <SearchResultHeader />
       </section>
@@ -166,11 +164,7 @@ const SearchResult = () => {
       </section>
 
       {/* main section with sidebar and property list */}
-      <Element
-      name="property-list" 
-        
-        className="px-4 xl:px-0 pt-40 md:pt-44 lg:pt-40"
-      >
+      <div className="px-4 xl:px-0 pt-40 md:pt-44 lg:pt-40">
         <div className="relative max-w-screen-xl mx-auto flex flex-col items-center sm:flex-row sm:items-start gap-8 pb-8 lg:pb-20">
           {/* sidebar for filters */}
           <div className="sm:sticky top-[11vh] left-0">
@@ -182,10 +176,10 @@ const SearchResult = () => {
             <PropertiesList properties={filteredProperties} />
           </div>
         </div>
-      </Element>
+      </div>
 
       {/* getstarted section */}
-      <section className="px-4 xl:px-0 mt-20 md:mt-40 lg:mt-24">
+      <section className="px-4 xl:px-0 mt-32 lg:mt-24">
         <GetStarted />
       </section>
     </div>

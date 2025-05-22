@@ -4,6 +4,7 @@ import { useProperties } from "../contexts/PropertiesContext";
 import RelatedProperties from "./property-details-components/RelatedProperties";
 import PropertyDisplay from "./property-details-components/PropertyDisplay";
 import GetStarted from "../components/GetStarted";
+import OurAgents from "../components/OurAgents";
 
 // component to show details of a single property
 const PropertyDetails = () => {
@@ -35,6 +36,11 @@ const PropertyDetails = () => {
       {/* related properties */}
       <section name="top" className="px-4 lg:px-0 mt-12 pb-12 lg:pb-20">
         <RelatedProperties prop={property} />
+      </section>
+
+      {/* our agents */}
+      <section className="px-4 xl:px-0 pb-20 ">
+        <OurAgents />
       </section>
 
       {/* get started section */}

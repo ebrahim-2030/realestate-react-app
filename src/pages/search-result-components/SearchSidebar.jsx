@@ -39,7 +39,7 @@ const SearchSidebar = ({ filters, onFilter }) => {
 
     // then scroll to the section programmatically
     scroller.scrollTo("property-list", {
-      offset: 70,
+      offset: -80,
     });
   };
 

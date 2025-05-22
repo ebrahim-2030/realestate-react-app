@@ -5,6 +5,7 @@ import { IoLocation } from "react-icons/io5";
 import { MdOutlineArrowRightAlt, MdOutlineChair } from "react-icons/md";
 import { BiBath, BiBed } from "react-icons/bi";
 import agents from "../../data/agents";
+import Agent from "../../components/Agent";
 
 // Component to display detailed information about a property
 const PropertyDisplay = ({ property }) => {
@@ -143,33 +144,10 @@ const PropertyDisplay = ({ property }) => {
 
             {/* Agent contact section */}
             <div className="mt-10">
-              <p className="text-sm font-semibold text-custom_black/80">
+              <p className="text-sm mb-2 font-semibold text-custom_black/80">
                 Contact With Our Agent
               </p>
-              <div className="mt-4 flex items-center justify-between border border-custom_black/10 bg-white p-4">
-                <div className="flex items-center gap-4">
-                  <img
-                    src={agent.profileImage}
-                    className="h-16 w-16 rounded-sm object-cover shadow"
-                    alt={agent.name}
-                  />
-                  <div>
-                    <h2 className="text-base font-semibold text-custom_black">
-                      {agent.name}
-                    </h2>
-                    <p className="text-sm text-custom_black/60">
-                      {agent.agency}
-                    </p>
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => navigate(`/agent-details/${agent.id}`)}
-                  className="border border-custom_black/20 px-3 py-1.5 text-sm font-medium text-custom_black transition hover:bg-custom_black hover:text-white hover:border-custom_black"
-                >
-                  Contact
-                </button>
-              </div>
+              <Agent agent={agent} />
             </div>
           </div>
         </div>

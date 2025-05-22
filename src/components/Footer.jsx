@@ -13,12 +13,11 @@ const Footer = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className="px-4 max-w-screen-2xl mx-auto pt-40 md:pt-48 bg-brand-primary text-white/95"
+      className=" bg-brand-primary pt-48   text-white/95"
     >
-      <div className="max-w-screen-xl mx-auto grid sm:grid-cols-3 lg:grid-cols-6 gap-y-20  ">
+      <div className="max-w-screen-2xl  px-4 mx-auto grid sm:grid-cols-3 lg:grid-cols-6 gap-y-20  ">
         {/* about & newsletter */}
         <div className="col-span-2 ">
-
           {/* about */}
           <div className="">
             <Link
@@ -148,10 +147,10 @@ const Footer = () => {
       </div>
 
       {/* white line */}
-      <hr className="mt-16 opacity-40" />
+      <hr className="mt-16 opacity-70" />
 
       {/* copyright section */}
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between py-4 opacity-60">
+      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row  gap-2 md:items-center justify-between py-4 opacity-60">
         <p>
           Design By{" "}
           <span className="text-brand-secandary opacity-100">Ebrahim Asil</span>
