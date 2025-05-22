@@ -55,7 +55,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [scrolled]);
 
   // hook for navigation
   const navigator = useNavigate();

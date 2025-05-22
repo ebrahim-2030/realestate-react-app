@@ -67,7 +67,7 @@ const AboutSection = () => {
       </div>
 
       {/* image section */}
-      <div className="md:w-1/2 flex items-end justify-center bg-gradient-to-t from-brand-primary via-brand-primary/50 to-transparent pt-4">
+      <div className="md:w-1/2 flex items-end justify-center bg-gradient-to-t from-brand-primary/80 via-brand-primary/20 to-transparent pt-4">
         <img src={about_sec} className="w-96 md:w-[500px]" />
       </div>
     </div>
