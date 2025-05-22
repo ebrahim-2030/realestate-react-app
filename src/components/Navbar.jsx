@@ -70,7 +70,7 @@ const Navbar = () => {
     <nav
       className={`h-[8vh] lg:h-[9.5vh] w-full mx-auto  px-4 fixed top-0 left-0  ${
         scrolled ? "bg-brand-primary " : "bg-transparent"
-      } text-white shadow lg:shadow-none  shadow-black/20 z-50 transition-all duration-300`}
+      } text-white  z-50 transition-all duration-300`}
     >
       <div className="max-w-screen-2xl mx-auto h-full flex items-center justify-between ">
         {/* logo */}
@@ -89,6 +89,7 @@ const Navbar = () => {
               onMouseLeave={() => link.submenu && setOpenDropdown(null)}
             >
               <NavLink
+              onClick={() => window.scrollTo(0,0)}
                 to={link.path}
                 className={({ isActive }) =>
                   `flex items-center  ${

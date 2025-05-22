@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, scroller } from "react-scroll";
 
 // sidebar for search filters
 const SearchSidebar = ({ filters, onFilter }) => {
@@ -35,6 +36,11 @@ const SearchSidebar = ({ filters, onFilter }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onFilter(localFilters);
+
+    // then scroll to the section programmatically
+    scroller.scrollTo("property-list", {
+      offset: 70,
+    });
   };
 
   // reset filters to default
@@ -68,7 +74,7 @@ const SearchSidebar = ({ filters, onFilter }) => {
                     type="radio"
                     name="propertyType"
                     value={type}
-                    checked={localFilters.propertyType === type}
+                    checked={localFilters.propertyType.toLowerCase() === type}
                     onChange={handleChange}
                   />
                   {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -89,7 +95,7 @@ const SearchSidebar = ({ filters, onFilter }) => {
                     type="radio"
                     name="listingType"
                     value={type}
-                    checked={localFilters.listingType === type}
+                    checked={localFilters.listingType.toLowerCase() === type}
                     onChange={handleChange}
                   />
                   {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -184,7 +190,7 @@ const SearchSidebar = ({ filters, onFilter }) => {
         {/* discounted only */}
         <div className="flex items-center gap-2">
           <input
-          className="accent-red-600"
+            className="accent-red-600"
             type="checkbox"
             name="discountedOnly"
             checked={localFilters.discountedOnly}
@@ -202,6 +208,7 @@ const SearchSidebar = ({ filters, onFilter }) => {
           >
             Search
           </button>
+
           <button
             type="button"
             onClick={handleReset}

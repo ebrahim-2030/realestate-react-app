@@ -15,6 +15,10 @@ const Discount = () => {
 
   const navigate = useNavigate();
 
+  // navigate to more properties
+  const handleNavigate = () => {
+    navigate("/search-result?discountedOnly=true");
+  };
   return (
     <div className=" max-w-screen-xl mx-auto">
       <div className="flex items-end justify-between">
@@ -31,7 +35,7 @@ const Discount = () => {
 
         {/* navigate to more properties */}
         <button
-          onClick={() => navigate("/search-result?discountedOnly=true")}
+          onClick={handleNavigate}
           className="hidden mt-6 p-2 text-sm  font-bold text-brand-primary/80  sm:flex items-center"
         >
           View More <IoIosArrowDroprightCircle className="text-lg ml-1" />
@@ -40,7 +44,7 @@ const Discount = () => {
 
       {/* grid of discounted properties */}
       <div className="mt-6 grid gap-4 sm:grid-cols-2 md:gap-10 lg:gap-4 lg:grid-cols-3 xl:grid-cols-4">
-        {filteredProperties.slice(1, 5).map((property) => (
+        {filteredProperties.slice(3, 7).map((property) => (
           <Property key={property.id} property={property} />
         ))}
       </div>

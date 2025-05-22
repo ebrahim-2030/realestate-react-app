@@ -1,13 +1,16 @@
 // import required assets and components
 import bgImage from "../assets/images/properties-hero.jpg";
 import Achivements from "../components/Achivements";
-import Header from "./search-result-components/Header";
+import SearchResultHeader from "./search-result-components/SearchResultHeader";
 import PropertiesList from "./search-result-components/PropertiesList";
 
 import { useEffect, useMemo, useState } from "react";
 import { useProperties } from "../contexts/PropertiesContext";
 import SearchSidebar from "./search-result-components/SearchSidebar";
 import { useLocation, useNavigate } from "react-router-dom";
+import GetStarted from "../components/GetStarted";
+
+import { Link, Element, } from "react-scroll";
 
 const SearchResult = () => {
   // get all properties from context
@@ -73,7 +76,7 @@ const SearchResult = () => {
 
       // match property type
       if (
-        filters.propertyType !== "all" &&
+        filters.propertyType.toLowerCase() !== "all" &&
         property.propertyType.toLowerCase() !==
           filters.propertyType.toLowerCase()
       ) {
@@ -93,7 +96,7 @@ const SearchResult = () => {
         filters.location !== "all" &&
         !property.location
           .toLowerCase()
-          .includes(filters.location.toLowerCase())
+          .includes(filters.location)
       ) {
         return false;
       }
@@ -152,7 +155,7 @@ const SearchResult = () => {
         }}
         className="px-4 xl:px-0 h-[75vh] pt-[8vh] lg:pt-[9.5vh]"
       >
-        <Header />
+        <SearchResultHeader />
       </section>
 
       {/* achievements section */}
@@ -163,13 +166,12 @@ const SearchResult = () => {
       </section>
 
       {/* main section with sidebar and property list */}
-      <section
-        style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(15,37,42, 0.1), rgba(15,37,42, 0.1))`,
-        }}
-        className="px-4 xl:px-0 pt-40 md:pt-44 lg:pt-44"
+      <Element
+      name="property-list" 
+        
+        className="px-4 xl:px-0 pt-40 md:pt-44 lg:pt-40"
       >
-        <div className="relative max-w-screen-xl mx-auto flex flex-col items-center sm:flex-row sm:items-start gap-8 pb-8">
+        <div className="relative max-w-screen-xl mx-auto flex flex-col items-center sm:flex-row sm:items-start gap-8 pb-8 lg:pb-20">
           {/* sidebar for filters */}
           <div className="sm:sticky top-[11vh] left-0">
             <SearchSidebar filters={filters} onFilter={setFilters} />
@@ -180,6 +182,11 @@ const SearchResult = () => {
             <PropertiesList properties={filteredProperties} />
           </div>
         </div>
+      </Element>
+
+      {/* getstarted section */}
+      <section className="px-4 xl:px-0 mt-20 md:mt-40 lg:mt-24">
+        <GetStarted />
       </section>
     </div>
   );

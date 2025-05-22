@@ -15,6 +15,12 @@ const Houses = () => {
     (property) => property.propertyType === "House"
   );
 
+  // navigate to more properties
+  const handleNavigate = () => {
+    navigate("/search-result?propertyType=house");
+    scrollTo(0, 0);
+  };
+
   return (
     <div className="max-w-screen-xl mx-auto">
       <div className="flex items-end justify-between">
@@ -30,7 +36,7 @@ const Houses = () => {
         </div>
         {/* navigate to more properties */}
         <button
-         onClick={() => navigate("/search-result?propertyType=house")}
+          onClick={handleNavigate}
           className="hidden mt-6 p-2 text-sm  font-bold text-brand-primary/80  sm:flex items-center"
         >
           View More <IoIosArrowDroprightCircle className="text-lg ml-1" />
@@ -39,7 +45,7 @@ const Houses = () => {
 
       {/* grid of house properties */}
       <div className="mt-6 grid gap-4 sm:grid-cols-2 md:gap-10 lg:gap-4 lg:grid-cols-3 xl:grid-cols-4">
-        {filteredProperties.slice(1, 5).map((property) => (
+        {filteredProperties.slice(3, 7).map((property) => (
           <Property key={property.id} property={property} />
         ))}
       </div>
@@ -47,7 +53,7 @@ const Houses = () => {
       {/* view more button for small screen */}
       <div className="flex sm:hidden justify-center">
         <button
-          onClick={() => navigate("/search-result?propertyType=house")}
+          onClick={handleNavigate}
           className=" mt-6 p-2  font-bold border-2  border-brand-primary/70 text-brand-primary/80 text-xs flex items-center"
         >
           View More <BiArrowToRight className="ml-1 text-lg " />

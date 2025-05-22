@@ -11,6 +11,7 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
 import GetStarted from "../components/GetStarted";
+import { Element } from "react-scroll";
 
 const Home = () => {
   return (
@@ -27,7 +28,9 @@ const Home = () => {
 
       {/* about section */}
       <section className=" px-4 xl:px-0 mt-12 md:mt-20 lg:mt-24 bg-white">
-        <AboutSection />
+        <Element name="about" >
+          <AboutSection />
+        </Element>
       </section>
 
       {/* discount section */}

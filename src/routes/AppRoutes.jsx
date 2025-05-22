@@ -7,6 +7,8 @@ import Contact from "../pages/Contact";
 import Auth from "../pages/Auth";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Agents from "../pages/Agents";
+import AgentDetails from "../pages/AgentDetails";
 
 const AppRoutes = () => {
   return (
@@ -18,7 +20,9 @@ const AppRoutes = () => {
           {/* pages routes  */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/properties/:id" element={<PropertyDetails />} />
+            <Route path="/property-details/:propertyId" element={<PropertyDetails />} />
+            <Route path="/agents" element={<Agents />} />
+            <Route path="/agent-details/:agentId" element={<AgentDetails />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/auth" element={<Auth />} />
