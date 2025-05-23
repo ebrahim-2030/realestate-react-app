@@ -150,7 +150,7 @@ const Footer = () => {
       <hr className="mt-16 opacity-70" />
 
       {/* copyright section */}
-      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row  gap-2 md:items-center justify-between py-4 opacity-60">
+      <div className="px-4 max-w-screen-xl mx-auto flex flex-col md:flex-row  gap-2 md:items-center justify-between py-4 opacity-60">
         <p>
           Design By{" "}
           <span className="text-brand-secandary opacity-100">Ebrahim Asil</span>

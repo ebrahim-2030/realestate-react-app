@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { BiSolidBuildingHouse } from "react-icons/bi";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import logo from "../assets/icons/logo.png";
-import { BsBuildingsFill, BsFillHouseHeartFill } from "react-icons/bs";
+import { BsBuildingsFill } from "react-icons/bs";
 import { FaHouseChimneyWindow } from "react-icons/fa6";
+import { SiHomebridge } from "react-icons/si";
 
 // nav links data
 const navlinks = [
@@ -68,14 +68,15 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`h-[8vh] lg:h-[9.5vh] w-full mx-auto  px-4 fixed top-0 left-0  ${
+      className={`h-[8.5vh] lg:h-[9.5vh] w-full mx-auto  px-4 fixed top-0 left-0  ${
         scrolled ? "bg-brand-primary " : "bg-transparent"
       } text-white  z-50 transition-all duration-300`}
     >
       <div className="max-w-screen-2xl mx-auto h-full flex items-center justify-between ">
         {/* logo */}
-        <Link to="/">
-          <img src={logo} className="h-10 md:h-12" alt="" />
+        <Link to="/" className="flex items-center gap-2">
+          <SiHomebridge className="text-4xl lg:text-[44px] text-brand-secandary" />
+          <h2 className="font-medium">RealEstate</h2>
         </Link>
         {/* desktop nav links */}
         <ul className="hidden flex-1 lg:flex items-center justify-center lg:ml-20 gap-10 capitalize relative">
@@ -89,7 +90,7 @@ const Navbar = () => {
               onMouseLeave={() => link.submenu && setOpenDropdown(null)}
             >
               <NavLink
-              onClick={() => window.scrollTo(0,0)}
+                onClick={() => window.scrollTo(0, 0)}
                 to={link.path}
                 className={({ isActive }) =>
                   `flex items-center  ${

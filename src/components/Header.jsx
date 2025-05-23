@@ -35,7 +35,7 @@ const Header = () => {
         <Link
           to="about"
           offset={-150}
-          className="cursor-pointer px-6 py-2.5 border-2 bg-brand-primary rounded-sm hover:bg-transparent hovertransition-all duration-200  "
+          className="cursor-pointer px-6 py-2.5 border-2 bg-white/10 rounded-sm hover:bg-transparent hovertransition-all duration-200  "
         >
           Learn More
         </Link>
