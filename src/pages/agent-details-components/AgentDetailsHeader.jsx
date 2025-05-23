@@ -24,7 +24,7 @@ const AgentDetailsHeader = ({ agent }) => {
         </div>
         <div className="flex-1 sm:pt-4">
           {/* agent name */}
-          <h2 className="text-2xl sm:text-3xl text-white ">
+          <h2 className="text-2xl sm:text-3xl xl:text-4xl xl:leading-[50px] text-white ">
             {" "}
             Expert Real Estate Guidance <br /> with{" "}
             <span className="text-brand-secandary font-bold">
