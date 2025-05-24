@@ -14,7 +14,7 @@ const ContactForm = () => {
   const formRef = useRef(null);
   const formView = useInView(formRef, { once: true });
   return (
-    <div className="max-w-screen-xl mx-auto bg-white ">
+    <div className="px-4 max-w-screen-xl mx-auto bg-white ">
       <div className="flex flex-col-reverse lg:flex-row  lg:items-center gap-8 lg:gap-10">
         {/* text box */}
         <motion.div
