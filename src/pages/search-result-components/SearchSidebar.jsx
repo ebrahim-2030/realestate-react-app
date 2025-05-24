@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, scroller } from "react-scroll";
 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 // sidebar for search filters
 const SearchSidebar = ({ filters, onFilter }) => {
   // default filter values
@@ -53,171 +56,199 @@ const SearchSidebar = ({ filters, onFilter }) => {
   const bedroomOptions = ["all", 1, 2, 3, 4, 5];
   const bathroomOptions = ["all", 1, 2, 3, 4];
 
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
   return (
     <aside className="w-80 pr-8 rounded">
       <h2 className="text-2xl font-bold mb-4">Search Filters</h2>
-      <form
-        onSubmit={handleSubmit}
-        className="opacity-90 flex flex-col gap-4 text-brand-primary accent-brand-primary"
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{
+          duration: 0.8,
+          delay: 0.3,
+          ease: "easeOut",
+        }}
       >
-        {/* property and listing type */}
-        <div className="flex flex-col gap-4">
-          {/* property type */}
+        <form
+          onSubmit={handleSubmit}
+          className="opacity-90 flex flex-col gap-4 text-brand-primary accent-brand-primary"
+        >
+          {/* property and listing type */}
+          <div className="flex flex-col gap-4">
+            {/* property type */}
+            <div className="border-b pb-1 border-brand-primary/20">
+              <label className="block mb-1 font-medium text-brand-primary">
+                Property Type
+              </label>
+              <div className="flex gap-1">
+                {["all", "house", "apartment"].map((type) => (
+                  <label key={type} className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="propertyType"
+                      value={type}
+                      checked={localFilters.propertyType.toLowerCase() === type}
+                      onChange={handleChange}
+                    />
+                    {type.charAt(0).toUpperCase() + type.slice(1)}
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* listing type */}
+            <div className="border-b pb-1 border-brand-primary/20">
+              <label className="block mb-1 font-medium text-brand-primary">
+                Listing Type
+              </label>
+              <div className="flex gap-1">
+                {["all", "sale", "rent"].map((type) => (
+                  <label key={type} className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="listingType"
+                      value={type}
+                      checked={localFilters.listingType.toLowerCase() === type}
+                      onChange={handleChange}
+                    />
+                    {type.charAt(0).toUpperCase() + type.slice(1)}
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* bedrooms */}
           <div className="border-b pb-1 border-brand-primary/20">
             <label className="block mb-1 font-medium text-brand-primary">
-              Property Type
+              Bedrooms
             </label>
-            <div className="flex gap-1">
-              {["all", "house", "apartment"].map((type) => (
-                <label key={type} className="flex items-center gap-2">
+            <div className="flex flex-wrap gap-3">
+              {bedroomOptions.map((option) => (
+                <label
+                  key={option}
+                  className="flex items-center gap-1 cursor-pointer"
+                >
                   <input
+                    className="cursor-pointer"
                     type="radio"
-                    name="propertyType"
-                    value={type}
-                    checked={localFilters.propertyType.toLowerCase() === type}
+                    name="bedrooms"
+                    value={String(option)}
+                    checked={localFilters.bedrooms === String(option)}
                     onChange={handleChange}
                   />
-                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                  {option === "all" ? "All" : `${option}`}
                 </label>
               ))}
             </div>
           </div>
 
-          {/* listing type */}
+          {/* bathrooms */}
           <div className="border-b pb-1 border-brand-primary/20">
             <label className="block mb-1 font-medium text-brand-primary">
-              Listing Type
+              Bathrooms
             </label>
-            <div className="flex gap-1">
-              {["all", "sale", "rent"].map((type) => (
-                <label key={type} className="flex items-center gap-2">
+            <div className="flex flex-wrap gap-3 ">
+              {bathroomOptions.map((option) => (
+                <label
+                  key={option}
+                  className="flex items-center gap-1 cursor-pointer"
+                >
                   <input
+                    className="cursor-pointer"
                     type="radio"
-                    name="listingType"
-                    value={type}
-                    checked={localFilters.listingType.toLowerCase() === type}
+                    name="bathrooms"
+                    value={String(option)}
+                    checked={localFilters.bathrooms === String(option)}
                     onChange={handleChange}
                   />
-                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                  {option === "all" ? "All" : `${option}`}
                 </label>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* bedrooms */}
-        <div className="border-b pb-1 border-brand-primary/20">
-          <label className="block mb-1 font-medium text-brand-primary">
-            Bedrooms
-          </label>
-          <div className="flex flex-wrap gap-2">
-            {bedroomOptions.map((option) => (
-              <label key={option} className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="bedrooms"
-                  value={String(option)}
-                  checked={localFilters.bedrooms === String(option)}
-                  onChange={handleChange}
-                />
-                {option === "all" ? "All" : `${option}+`}
+          {/* price range */}
+          <div className="flex gap-4">
+            <div>
+              <label className="text-brand-primary font-medium">
+                Price Min
               </label>
-            ))}
-          </div>
-        </div>
+              <input
+                type="number"
+                name="priceMin"
+                value={localFilters.priceMin}
+                onChange={handleChange}
+                className="bg-transparent w-full px-2 border-b border-brand-primary/20 outline-none"
+                min={0}
+              />
+            </div>
 
-        {/* bathrooms */}
-        <div className="border-b pb-1 border-brand-primary/20">
-          <label className="block mb-1 font-medium text-brand-primary">
-            Bathrooms
-          </label>
-          <div className="flex flex-wrap gap-2">
-            {bathroomOptions.map((option) => (
-              <label key={option} className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="bathrooms"
-                  value={String(option)}
-                  checked={localFilters.bathrooms === String(option)}
-                  onChange={handleChange}
-                />
-                {option === "all" ? "All" : `${option}+`}
+            <div>
+              <label className="text-brand-primary font-medium">
+                Price Max
               </label>
-            ))}
+              <input
+                type="number"
+                name="priceMax"
+                value={localFilters.priceMax}
+                onChange={handleChange}
+                className="bg-transparent w-full px-2 border-b border-brand-primary/20 outline-none"
+                min={0}
+              />
+            </div>
           </div>
-        </div>
 
-        {/* price range */}
-        <div className="flex gap-4">
+          {/* location */}
           <div>
-            <label className="text-brand-primary font-medium">Price Min</label>
+            <label className="text-brand-primary font-medium">City</label>
             <input
-              type="number"
-              name="priceMin"
-              value={localFilters.priceMin}
+              type="text"
+              name="location"
+              value={
+                localFilters.location === "all" ? "" : localFilters.location
+              }
               onChange={handleChange}
-              className="bg-transparent w-full px-2 border-b border-brand-primary/20 outline-none"
-              min={0}
+              placeholder="e.g. Kunduz"
+              className="w-full px-2 border-b outline-none border-brand-primary/20 bg-transparent"
             />
           </div>
 
-          <div>
-            <label className="text-brand-primary font-medium">Price Max</label>
+          {/* discounted only */}
+          <div className="inline-flex  text-custom_black rounded items-center gap-2   px-2 ">
             <input
-              type="number"
-              name="priceMax"
-              value={localFilters.priceMax}
+              className="accent-white "
+              type="checkbox"
+              name="discountedOnly"
+              checked={localFilters.discountedOnly}
               onChange={handleChange}
-              className="bg-transparent w-full px-2 border-b border-brand-primary/20 outline-none"
-              min={0}
+              id="discountedOnly"
             />
+            <label htmlFor="discountedOnly">Discounted Only</label>
           </div>
-        </div>
 
-        {/* location */}
-        <div>
-          <label className="text-brand-primary font-medium">City</label>
-          <input
-            type="text"
-            name="location"
-            value={localFilters.location === "all" ? "" : localFilters.location}
-            onChange={handleChange}
-            placeholder="e.g. Kunduz"
-            className="w-full px-2 border-b outline-none border-brand-primary/20 bg-transparent"
-          />
-        </div>
+          {/* action buttons */}
+          <div className="flex gap-3 mt-2">
+            <button
+              type="submit"
+              className="bg-brand-secandary/90 text-white w-1/2  py-2 rounded hover:scale-95 transition-all duration-200"
+            >
+              Search
+            </button>
 
-        {/* discounted only */}
-        <div className="flex items-center gap-2">
-          <input
-            className="accent-red-600"
-            type="checkbox"
-            name="discountedOnly"
-            checked={localFilters.discountedOnly}
-            onChange={handleChange}
-            id="discountedOnly"
-          />
-          <label htmlFor="discountedOnly">Discounted Only</label>
-        </div>
-
-        {/* action buttons */}
-        <div className="flex gap-3 mt-2">
-          <button
-            type="submit"
-            className="bg-brand-secandary/90 text-white w-1/2 border-2 borderpri py-2 rounded hover:scale-95 transition-all duration-200"
-          >
-            Search
-          </button>
-
-          <button
-            type="button"
-            onClick={handleReset}
-            className="bg-brand-primary text-white w-1/2 border-2 py-2 rounded hover:scale-95 transition-all duration-200"
-          >
-            Reset
-          </button>
-        </div>
-      </form>
+            <button
+              type="button"
+              onClick={handleReset}
+              className="bg-brand-primary text-white w-1/2 py-2 rounded hover:scale-95 transition-all duration-200"
+            >
+              Reset
+            </button>
+          </div>
+        </form>
+      </motion.div>
     </aside>
   );
 };

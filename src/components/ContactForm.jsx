@@ -1,16 +1,33 @@
-const ContactForm = () => {
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
-    // prevent submit default action
+const ContactForm = () => {
+  // prevent submit default action
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Data Sent");
   };
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  const formRef = useRef(null);
+  const formView = useInView(formRef, { once: true });
   return (
     <div className="max-w-screen-xl mx-auto bg-white ">
       <div className="flex flex-col-reverse lg:flex-row  lg:items-center gap-8 lg:gap-10">
-
         {/* text box */}
-        <div className="flex-1  flex flex-col gap-3   md:pt-6">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            duration: 0.8,
+            delay: 0.3,
+            ease: "easeOut",
+          }}
+          className="flex-1  flex flex-col gap-3   md:pt-6"
+        >
           <span className="uppercase font-medium text-sm ">Contact Us</span>
           <h2 className=" text-3xl lg:text-4xl xl:text-5xl font-semibold xl:leading-[66px]">
             Let’s Connect and <br /> Begin Your Journey Today
@@ -21,12 +38,24 @@ const ContactForm = () => {
             necessitatibus debitis, est quidem, eius vel velit officia ab quia
             doloremque!
           </p>
-        </div>
+        </motion.div>
 
         {/* contact form */}
-        <div className="w-full lg:w-1/2  bg-white lg:pb-20">
+        <motion.div
+          ref={formRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={formView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            duration: 0.8,
+            delay: 0.3,
+            ease: "easeOut",
+          }}
+          className="w-full lg:w-1/2  bg-white lg:pb-20"
+        >
           <div className="w-full sm:max-w-screen-sm sm:mx-auto py-12 px-6 md:py-14 md:px-10 shadow-2xl -mt-64 sm:-mt-44 lg:-mt-24  bg-white rounded-tl-3xl">
-            <h2 className="text-3xl font-semibold mb-3">Fill out for contact</h2>
+            <h2 className="text-3xl font-semibold mb-3">
+              Fill out for contact
+            </h2>
             <p className="font-medium text-sm text-custom_black/40">
               Lorem ipsum dolor sit amet consectetur libero donec.
             </p>
@@ -75,7 +104,7 @@ const ContactForm = () => {
               </button>
             </form>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

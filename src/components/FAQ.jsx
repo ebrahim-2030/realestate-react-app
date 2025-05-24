@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import { FaRegWindowMinimize, FaWindowMinimize } from "react-icons/fa";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
+import { motion, useInView } from "framer-motion";
+
 const FAQ = () => {
   // faq categories
   const categories = ["General", "Buying", "Selling", "Renting"];
@@ -24,8 +26,21 @@ const FAQ = () => {
   const handleToggle = (id) => {
     setOpenedId(openedId === id ? null : id);
   };
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   return (
-    <div className="max-w-screen-xl mx-auto py-20  bg-gradient-to-b from-emerald-50/50 to-transparent ">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.8,
+        delay: 0.3,
+        ease: "easeOut",
+      }}
+      className="max-w-screen-xl mx-auto py-20  bg-gradient-to-b from-emerald-50/50 to-transparent "
+    >
       <div className="max-w-screen-md mx-auto flex flex-col items-center px-4 sm:px-8">
         {/* image and heading */}
         <div className="w-full flex flex-col sm:flex-row items-center sm:justify-between gap-8">
@@ -102,7 +117,7 @@ const FAQ = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

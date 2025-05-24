@@ -1,7 +1,20 @@
-
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 const GetStarted = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   return (
-    <div className="max-w-screen-xl mx-auto  relative ">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.8,
+        delay: 0.3,
+        ease: "easeOut",
+      }}
+      className="max-w-screen-xl mx-auto  relative "
+    >
       <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 w-full bg-brand-secandary rounded flex flex-col items-center py-10 md:flex-row md:justify-center md:gap-10 lg:gap-64 ">
         {/* title */}
         <div>
@@ -20,7 +33,7 @@ const GetStarted = () => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

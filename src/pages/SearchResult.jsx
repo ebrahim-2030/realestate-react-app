@@ -151,7 +151,7 @@ const SearchResult = () => {
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
-        className="px-4 xl:px-0 h-[80vh] pt-[8vh] lg:pt-[9.5vh]"
+        className="px-4 xl:px-0 h-[60vh] pt-[8vh] lg:pt-[9.5vh]"
       >
         <SearchResultHeader />
       </section>
@@ -164,7 +164,7 @@ const SearchResult = () => {
       </section>
 
       {/* main section with sidebar and property list */}
-      <div className="px-4 xl:px-0 pt-40 md:pt-44 lg:pt-40">
+      <div className="px-4 xl:px-0 pt-40 md:pt-44 lg:pt-32">
         <div className="relative max-w-screen-xl mx-auto flex flex-col items-center sm:flex-row sm:items-start gap-8 pb-8 lg:pb-20">
           {/* sidebar for filters */}
           <div className="sm:sticky top-[11vh] left-0">

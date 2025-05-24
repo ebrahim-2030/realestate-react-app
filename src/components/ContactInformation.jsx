@@ -1,9 +1,23 @@
 import { RiContactsBookLine, RiHomeOfficeLine } from "react-icons/ri";
 import { TfiAlarmClock } from "react-icons/tfi";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const ContactInformation = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   return (
-    <div className="max-w-screen-lg mx-auto ">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.8,
+        delay: 0.3,
+        ease: "easeOut",
+      }}
+      className="max-w-screen-lg mx-auto "
+    >
       <div className="flex flex-col items-center w-full">
         {/* title and description */}
         <div className="text-center">
@@ -56,7 +70,7 @@ const ContactInformation = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

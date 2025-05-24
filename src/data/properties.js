@@ -108,9 +108,9 @@ const properties = [
       "This stylish apartment offers contemporary living in the heart of Kabul. Features spacious rooms, modern kitchen, and balcony with city views. Perfect for professionals seeking comfort and convenience.",
     price: 500,
     discount: {
-      isDiscounted: false,
-      discountedPrice: null,
-      discountPercentage: null,
+      isDiscounted: true,
+      discountedPrice: 450,
+      discountPercentage: 10,
       validUntil: "2025-07-10",
     },
     listingType: "rent",
@@ -119,7 +119,7 @@ const properties = [
     city: "kabul",
     location: "Kabul, Shahre Naw District",
     features: {
-      bedrooms: 2,
+      bedrooms: 3,
       bathrooms: 2,
       areaSqFt: 1800,
       yearBuilt: 2020,
@@ -166,9 +166,9 @@ const properties = [
       "Ideal for academic families, this bright apartment is minutes from Kabul University. Features large living areas, study room, and children's play area. Quiet neighborhood with excellent security.",
     price: 700,
     discount: {
-      isDiscounted: false,
-      discountedPrice: null,
-      discountPercentage: null,
+      isDiscounted: true,
+      discountedPrice: 665,
+      discountPercentage: 5,
       validUntil: "2025-07-10",
     },
     listingType: "rent",
@@ -177,7 +177,7 @@ const properties = [
     city: "kabul",
     location: "Kabul, Taimani District",
     features: {
-      bedrooms: 2,
+      bedrooms: 3,
       bathrooms: 2,
       areaSqFt: 1800,
       yearBuilt: 2020,
@@ -438,8 +438,8 @@ const properties = [
     city: "herat",
     location: "Herat, Golran District",
     features: {
-      bedrooms: 3,
-      bathrooms: 2,
+      bedrooms: 4,
+      bathrooms: 3,
       areaSqFt: 1800,
       yearBuilt: 2020,
       furnishing: "Furnished",
@@ -496,8 +496,8 @@ const properties = [
     city: "herat",
     location: "Herat, Chahar Suq Area",
     features: {
-      bedrooms: 3,
-      bathrooms: 2,
+      bedrooms: 4,
+      bathrooms: 3,
       areaSqFt: 1800,
       yearBuilt: 2020,
       furnishing: "Furnished",
@@ -554,8 +554,8 @@ const properties = [
     city: "kunduz",
     location: "Kunduz, Old Bazaar Area",
     features: {
-      bedrooms: 3,
-      bathrooms: 2,
+      bedrooms: 4,
+      bathrooms: 3,
       areaSqFt: 1800,
       yearBuilt: 2020,
       furnishing: "Furnished",
@@ -612,8 +612,8 @@ const properties = [
     city: "kunduz",
     location: "Kunduz, Bagh-e Bala",
     features: {
-      bedrooms: 3,
-      bathrooms: 2,
+      bedrooms:4,
+      bathrooms: 3,
       areaSqFt: 1800,
       yearBuilt: 2020,
       furnishing: "Furnished",
@@ -670,8 +670,8 @@ const properties = [
     city: "kunduz",
     location: "Kunduz, Aliabad Heights",
     features: {
-      bedrooms: 3,
-      bathrooms: 2,
+      bedrooms: 4,
+      bathrooms: 3,
       areaSqFt: 1800,
       yearBuilt: 2020,
       furnishing: "Furnished",
@@ -989,7 +989,7 @@ const properties = [
     city: "herat",
     location: "Herat, Chishti Street",
     features: {
-      bedrooms: 3,
+      bedrooms: 4,
       bathrooms: 2,
       areaSqFt: 1800,
       yearBuilt: 2020,
@@ -1018,7 +1018,7 @@ const properties = [
     city: "herat",
     location: "Herat, Eco Village",
     features: {
-      bedrooms: 3,
+      bedrooms: 4 ,
       bathrooms: 2,
       areaSqFt: 1800,
       yearBuilt: 2020,
@@ -1047,7 +1047,7 @@ const properties = [
     city: "herat",
     location: "Herat, Bagh-e Zaghan",
     features: {
-      bedrooms: 3,
+      bedrooms: 4 ,
       bathrooms: 2,
       areaSqFt: 1800,
       yearBuilt: 2020,
@@ -1076,7 +1076,7 @@ const properties = [
     city: "herat",
     location: "Herat, Jami Street",
     features: {
-      bedrooms: 3,
+      bedrooms: 4 ,
       bathrooms: 2,
       areaSqFt: 1800,
       yearBuilt: 2020,
@@ -1134,7 +1134,7 @@ const properties = [
     city: "kunduz",
     location: "Kunduz, Weaver's Quarter",
     features: {
-      bedrooms: 3,
+      bedrooms: 4 ,
       bathrooms: 2,
       areaSqFt: 1800,
       yearBuilt: 2020,

@@ -1,8 +1,23 @@
+import { useRef } from "react";
 import about_sec from "../assets/images/about-sec.png";
+import { motion, useInView } from "framer-motion";
 
 const AboutSection = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
   return (
-    <div className="max-w-screen-xl mx-auto  font-medium flex flex-col md:flex-row-reverse     gap-6 sm:gap-12">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.8,
+        delay: 0.3,
+        ease: "easeOut",
+      }}
+      className="max-w-screen-xl mx-auto  font-medium flex flex-col md:flex-row-reverse     gap-6 sm:gap-12"
+    >
       <div className="flex flex-col md:w-1/2">
         {/* title and description */}
         <div className=" flex flex-col items-start">
@@ -70,7 +85,7 @@ const AboutSection = () => {
       <div className="md:w-1/2 flex items-end justify-center bg-gradient-to-t from-brand-primary/80 via-brand-primary/20 to-transparent pt-4">
         <img src={about_sec} className="w-96 md:w-[500px]" />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

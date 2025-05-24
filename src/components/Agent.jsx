@@ -1,4 +1,5 @@
-import React from "react";
+import { motion, useInView } from "motion/react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Agent = ({ agent }) => {
@@ -9,8 +10,21 @@ const Agent = ({ agent }) => {
     navigate(`/agent-details/${agent.id}`);
     window.scrollTo(0, 0);
   };
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   return (
-    <div className="group  flex items-center justify-between border border-custom_black/10 shadow-sm p-3">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.8,
+        delay: 0.3,
+        ease: "easeOut",
+      }}
+      className="group  flex items-center justify-between border border-custom_black/10 shadow-sm p-3"
+    >
       <div className="flex items-center gap-3">
         {/* agent picture */}
         <img
@@ -37,7 +51,7 @@ const Agent = ({ agent }) => {
       >
         Contact
       </button>
-    </div>
+    </motion.div>
   );
 };
 

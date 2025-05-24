@@ -1,12 +1,15 @@
+import { useRef } from "react";
 import agents from "../assets/images/agents.jpg";
 import GetStarted from "../components/GetStarted";
 import OurAgents from "../components/OurAgents";
 import Testimonials from "../components/Testimonials";
+import { motion, useInView } from "framer-motion";
 
 const Agents = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   return (
     <div className="">
-      
       {/* hearo section with bg image */}
       <section
         style={{
@@ -17,7 +20,17 @@ const Agents = () => {
         }}
         className="px-4 xl:px-0 h-[80vh] pt-[8vh] lg:pt-[9.5vh]  "
       >
-        <div className="max-w-screen-2xl mx-auto px-4 md:px-8 lg:px-12 xl:px-16 text-white pt-6 lg:pt-32 ">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            duration: 0.8,
+            delay: 0.3,
+            ease: "easeOut",
+          }}
+          className="max-w-screen-2xl mx-auto px-4 md:px-8 lg:px-12 xl:px-16 text-white pt-6 lg:pt-32 "
+        >
           <div className="flex flex-col items-start text-start gap-6">
             {/* title */}
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold lg:leading-[70px]">
@@ -27,7 +40,7 @@ const Agents = () => {
               </span>
             </h2>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* our agents */}

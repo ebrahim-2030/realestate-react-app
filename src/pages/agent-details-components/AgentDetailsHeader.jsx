@@ -52,7 +52,7 @@ const AgentDetailsHeader = ({ agent }) => {
             </p>
             <button
               onClick={handleNavigate}
-              className="px-6 py-2 border text-sm font-medium bg-white text-custom_black rounded-sm hover:bg-transparent transition-all duration-200 mt-4"
+              className="px-6 py-2 border text-sm font-medium bg-white text-custom_black rounded-sm hover:bg-transparent hover:text-white transition-all duration-200 mt-4"
             >
               Contact
             </button>

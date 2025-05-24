@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import bg3 from "../assets/images/bg3.webp";
-import logo from "../assets/icons/logo.png";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
+import { SiHomebridge } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -19,13 +19,11 @@ const Footer = () => {
         {/* about & newsletter */}
         <div className="col-span-2 ">
           {/* about */}
-          <div className="">
-            <Link
-              to="/"
-              className="flex items-center gap-4 text-2xl font-medium -mt-3"
-            >
-              <img src={logo} className="h-10 md:h-12" alt="" />
-              <span>RealEstate</span>
+          <div onClick={() => window.scrollTo(0,0)} className="">
+            {/* logo */}
+            <Link to="/" className="flex items-center gap-2">
+              <SiHomebridge className="text-4xl lg:text-[44px] text-brand-secandary" />
+              <h2 className="font-medium">RealEstate</h2>
             </Link>
             <p className="text-sm my-4 opacity-60 ">
               Lorem ipsum dolor sit amet consectetur. <br /> Posuere vitae lacus

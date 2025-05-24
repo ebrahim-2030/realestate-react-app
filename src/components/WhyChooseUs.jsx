@@ -4,8 +4,10 @@ import search from "../assets/icons/smart search.png";
 import deal from "../assets/icons/deal.png";
 import security from "../assets/icons/security.png";
 import coverage from "../assets/icons/coverage.png";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
 
-// why-choose-us data array 
+// why-choose-us data array
 const whyChooseUs = [
   {
     id: "01",
@@ -52,8 +54,20 @@ const whyChooseUs = [
 ];
 
 const WhyChooseUs = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   return (
-    <div className="max-w-screen-xl mx-auto text-white py-12 sm:py-16">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.8,
+        delay: 0.3,
+        ease: "easeOut",
+      }}
+      className="max-w-screen-xl mx-auto text-white py-12 sm:py-16"
+    >
       {/* title and description */}
       <div className=" flex flex-col items-start opacity-90">
         <h2 className="text-2xl md:text-4xl font-bold sm:font-semibold">
@@ -77,7 +91,7 @@ const WhyChooseUs = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 

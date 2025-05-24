@@ -1,9 +1,23 @@
 import story1 from "../../assets/images/story1.jpg";
 import story2 from "../../assets/images/story2.jpg";
 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 const OurStory = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   return (
-    <div className="max-w-screen-xl mx-auto ">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.8,
+        delay: 0.3,
+        ease: "easeOut",
+      }}
+      className="max-w-screen-xl mx-auto "
+    >
       <div className="flex flex-col md:flex-row md:gap-8 md:items-center md:justify-between">
         {/* title and description */}
         <div className="md:flex-1">
@@ -51,7 +65,7 @@ const OurStory = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

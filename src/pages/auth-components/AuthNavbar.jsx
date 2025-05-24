@@ -7,7 +7,7 @@ const AuthNavbar = () => {
       <div className="h-full max-w-screen-2xl mx-auto flex items-center  ">
         {/* logo */}
         <Link to="/" className="flex items-center gap-2">
-          <SiHomebridge className="text-4xl text-brand-secandary" />
+          <SiHomebridge className="text-4xl lg:text-[40px] text-brand-secandary" />
           <h2 className="font-medium">RealEstate</h2>
         </Link>
       </div>

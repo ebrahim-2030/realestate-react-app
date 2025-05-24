@@ -11,6 +11,7 @@ import OurStory from "./about-components/OurStory";
 import OurAgents from "../components/OurAgents";
 
 const About = () => {
+
   return (
     <div>
       {/* hero section with background image */}

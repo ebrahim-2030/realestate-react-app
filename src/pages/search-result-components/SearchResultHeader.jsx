@@ -9,11 +9,11 @@ const SearchResultHeader = () => {
             Find Your Home
           </span>
         </h2>
-        {/* description */}
+        {/* description
         <p className=" text-white/75  text-sm leading-6">
           From cozy apartments to spacious family homes, we help <br /> you
           settle into the perfect neighborhood.
-        </p>
+        </p> */}
       </div>
     </div>
   );

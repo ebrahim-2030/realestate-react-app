@@ -7,6 +7,8 @@ import { BiBath, BiBed } from "react-icons/bi";
 import agents from "../../data/agents";
 import Agent from "../../components/Agent";
 
+import { motion, useInView } from "framer-motion";
+
 // Component to display detailed information about a property
 const PropertyDisplay = ({ property }) => {
   if (!property) {
@@ -40,12 +42,24 @@ const PropertyDisplay = ({ property }) => {
   // Find the agent associated with the property
   const agent = agents.find((agent) => agent.id === property.agent);
 
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   return (
     <div>
       <Breadecrumb title={property.title} />
 
       {/* Main property display and sidebar info */}
-      <div className="px-4 lg:px-0 max-w-screen-xl mx-auto py-4 md:py-8">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: -50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{
+          duration: 0.8,
+          delay: 0.3,
+          ease: "easeOut",
+        }}
+        className="px-4 lg:px-0 max-w-screen-xl mx-auto py-4 md:py-8"
+      >
         <div className="flex flex-col gap-4 lg:gap-8 lg:items-center lg:flex-row">
           {/* Image gallery and thumbnails */}
           <div className="lg:flex-1 flex flex-col md:flex-row-reverse items-center gap-4">
@@ -143,7 +157,7 @@ const PropertyDisplay = ({ property }) => {
             </div>
 
             {/* Agent contact section */}
-            <div className="mt-10">
+            <div className="mt-16">
               <p className="text-sm mb-2 font-semibold text-custom_black/80">
                 Contact With Our Agent
               </p>
@@ -151,7 +165,7 @@ const PropertyDisplay = ({ property }) => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

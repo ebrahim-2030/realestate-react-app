@@ -27,6 +27,7 @@ import { ImQuotesLeft } from "react-icons/im";
 import { RiStarSFill } from "react-icons/ri";
 import { TiStarFullOutline } from "react-icons/ti";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { motion, useInView } from "framer-motion";
 
 const testimonials = [
   {
@@ -72,8 +73,21 @@ const Testimonials = () => {
   // refs for buttons
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   return (
-    <div className=" relative max-w-screen-lg  mx-auto">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.8,
+        delay: 0.3,
+        ease: "easeOut",
+      }}  
+      className=" relative max-w-screen-lg  mx-auto"
+    >
       <div className="w-full flex flex-col sm:flex-row sm:justify-between gap-6 ">
         {/* title and description */}
         <div className="flex-1">
@@ -169,7 +183,7 @@ const Testimonials = () => {
           </Swiper>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

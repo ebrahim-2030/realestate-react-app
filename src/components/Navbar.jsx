@@ -6,6 +6,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { BsBuildingsFill } from "react-icons/bs";
 import { FaHouseChimneyWindow } from "react-icons/fa6";
 import { SiHomebridge } from "react-icons/si";
+import { scroller } from "react-scroll";
 
 // nav links data
 const navlinks = [
@@ -72,10 +73,13 @@ const Navbar = () => {
         scrolled ? "bg-brand-primary " : "bg-transparent"
       } text-white  z-50 transition-all duration-300`}
     >
-      <div className="max-w-screen-2xl mx-auto h-full flex items-center justify-between ">
+      <div
+        onClick={() => window.scrollTo(0, 0)}
+        className="max-w-screen-2xl mx-auto h-full flex items-center justify-between "
+      >
         {/* logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <SiHomebridge className="text-4xl lg:text-[44px] text-brand-secandary" />
+        <Link to="/" onClick={() => openMenu(false)} className="flex items-center gap-2">
+          <SiHomebridge className="text-4xl lg:text-[40px] text-brand-secandary" />
           <h2 className="font-medium">RealEstate</h2>
         </Link>
         {/* desktop nav links */}
@@ -118,7 +122,11 @@ const Navbar = () => {
                       key={item.path}
                       className="hover:bg-brand-primary hover:text-white rounded-md p-4 transition-all duration-100"
                     >
-                      <NavLink to={item.path} className="">
+                      <NavLink
+                        onClick={() => window.scrollTo(0, 0)}
+                        to={item.path}
+                        className=""
+                      >
                         <div className="flex items-end justify-between mb-2">
                           <span className="flex gap-2">
                             <span className="text-2xl">
