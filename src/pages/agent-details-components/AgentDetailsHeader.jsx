@@ -4,6 +4,9 @@ import { HiMiniBuildingOffice } from "react-icons/hi2";
 import { MdEmail } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 const AgentDetailsHeader = ({ agent }) => {
   const navigate = useNavigate();
   // navigate to search page
@@ -11,8 +14,21 @@ const AgentDetailsHeader = ({ agent }) => {
     navigate("/auth");
     scrollTo(0, 0);
   };
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   return (
-    <div className="max-w-screen-xl mx-auto h-full  text-brand-secandary flex flex-col items-center ">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.8,
+        delay: 0.3,
+        ease: "easeOut",
+      }}
+      className="max-w-screen-xl mx-auto h-full  text-brand-secandary flex flex-col items-center "
+    >
       <div className="flex flex-col lg:flex-row gap-8 items-start sm:items-start justify-start sm:justify-start h-full ">
         {/* agent picture */}
         <div className=" flex items-end justify-center sm:justify-start lg:justify-center sm:items-end  gap-6 bg-brand-secandary pt-2  h-[380px] w-full lg:w-[400px]    rounded rounded-b-none ">
@@ -59,7 +75,7 @@ const AgentDetailsHeader = ({ agent }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

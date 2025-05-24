@@ -6,12 +6,13 @@ import Testimonials from "../components/Testimonials";
 import GetStarted from "../components/GetStarted";
 import MoreAgents from "./agent-details-components/MoreAgents";
 
+
 const AgentDetails = () => {
   const { agentId } = useParams();
 
   const foundAgent = agents.find((agent) => agent.id === agentId);
 
-  console.log(foundAgent);
+  
 
   return (
     <div>
