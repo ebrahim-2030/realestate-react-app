@@ -40,12 +40,12 @@ const Footer = () => {
             <form className="h-12 mt-4 max-w-[330px]  bg-transparent border-2 rounded border-white text-white flex items-center">
               <input
                 type="text"
-                className="flex-1 h-full bg-transparent px-4 border-none outline-none placeholder:text-sm placeholder:font-medium "
+                className="flex-1 w-full h-full bg-transparent px-4 border-none outline-none placeholder:text-sm placeholder:font-medium "
                 placeholder="example@gmail.com"
               />
               <button
                 type="submit"
-                className="bg-white text-curren text-brand-primary w-20    text-sm font-medium h-full border-none"
+                className="bg-white text-curren text-brand-primary px-6   text-sm font-medium h-full border-none"
               >
                 Subscripe
               </button>
