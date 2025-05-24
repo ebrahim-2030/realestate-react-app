@@ -18,7 +18,7 @@ const Agents = () => {
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
-        className="px-4 xl:px-0 h-[80vh] pt-[8vh] lg:pt-[9.5vh]  "
+        className="px-4 xl:px-0 h-[80vh] pt-[9vh] lg:pt-[9.5vh]  "
       >
         <motion.div
           ref={ref}
@@ -33,7 +33,7 @@ const Agents = () => {
         >
           <div className="flex flex-col items-start text-start gap-6">
             {/* title */}
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold lg:leading-[70px]">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold lg:leading-[70px]">
               Find The Right Agent
               <span className="text-brand-secandary  mt-2 sm:mt-3 block ">
                 For You.

@@ -7,7 +7,7 @@ const Auth = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   return (
-    <mdiv className=" px-4 xl:px-0  h-[100vh] flex justify-center  pt-24 bg-brand-primary text-white">
+    <mdiv className=" px-4 xl:px-0  h-[100vh] flex justify-center  items-center bg-brand-primary text-white">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: -50 }}

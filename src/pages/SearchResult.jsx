@@ -94,7 +94,7 @@ const SearchResult = () => {
       // match location
       if (
         filters.location !== "all" &&
-        !property.location.toLowerCase().includes(filters.location)
+        !property.location.toLowerCase().includes(filters.location.toLowerCase())
       ) {
         return false;
       }

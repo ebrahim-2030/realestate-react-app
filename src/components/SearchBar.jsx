@@ -29,7 +29,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="mt-10">
+    <div className="mt-16">
       <p className="text-center mb-4 text-white/80">
         What are you looking for?
       </p>
