@@ -40,7 +40,7 @@ const AboutSection = () => {
             >
               Search & Filter
             </h3>
-            <p className="  w-full  lg:w-64 leading-5">
+            <p className="  w-full   leading-5">
               Find your dream home by filtering properties based on location,
               price, and type.
             </p>
@@ -52,7 +52,7 @@ const AboutSection = () => {
             >
               View & Explore
             </h3>
-            <p className="w-full  lg:w-64 leading-5">
+            <p className="w-full   leading-5">
               Check out high-quality images, virtual tours, and property
               details.
             </p>
@@ -64,7 +64,7 @@ const AboutSection = () => {
             >
               Connect with Agents
             </h3>
-            <p className="w-full  lg:w-64 leading-5">
+            <p className="w-full   leading-5">
               Get in touch with property owners or real estate agents
               effortlessly.
             </p>
@@ -73,7 +73,7 @@ const AboutSection = () => {
             <h3 className="text-center w-40 py-2 bg-gradient-to-t from-brand-primary via-brand-primary/90 to-brand-primary/80 text-white ">
               Seal the Deal
             </h3>
-            <p className="w-full  lg:w-64 leading-5">
+            <p className="w-full   leading-5">
               Complete the paperwork, make payments, and move into your new
               home!
             </p>
